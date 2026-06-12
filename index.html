@@ -40,6 +40,159 @@
     --transition:  0.35s cubic-bezier(0.4,0,0.2,1);
   }
 
+
+  /* ============================================
+     DARK MODE
+  ============================================ */
+  body.dark-mode {
+    --cream: #0f1117;
+    --white: #1a1d27;
+    --navy: #C9A84C;
+    --text-dark: #f0f0f0;
+    --text-mid: #cccccc;
+    --text-light: #aaaaaa;
+    --border: rgba(201,168,76,0.2);
+    background: #0f1117;
+    color: #f0f0f0;
+  }
+
+  /* Sections background */
+  body.dark-mode #about,
+  body.dark-mode #projects,
+  body.dark-mode #achievements,
+  body.dark-mode #resume,
+  body.dark-mode #contact,
+  body.dark-mode #certifications,
+  body.dark-mode #experience { background: #0f1117; }
+
+  /* Cards */
+  body.dark-mode .experience-card,
+  body.dark-mode .project-card,
+  body.dark-mode .achievement-card,
+  body.dark-mode .cert-card,
+  body.dark-mode .highlight-card { background: #1a1d27 !important; border-color: rgba(255,255,255,0.08) !important; }
+
+  /* All headings & titles visible */
+  body.dark-mode .section-title,
+  body.dark-mode .project-title,
+  body.dark-mode .ach-title,
+  body.dark-mode .cert-title,
+  body.dark-mode .exp-role,
+  body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+  body.dark-mode .highlight-title,
+  body.dark-mode .skills-col-title,
+  body.dark-mode .skill-bar-header span { color: #f0f0f0 !important; }
+
+  /* Subtitles & descriptions */
+  body.dark-mode .section-subtitle,
+  body.dark-mode .project-desc,
+  body.dark-mode .ach-desc,
+  body.dark-mode .cert-issuer,
+  body.dark-mode .exp-desc,
+  body.dark-mode .exp-date,
+  body.dark-mode .highlight-desc,
+  body.dark-mode p { color: #aaaaaa !important; }
+
+  /* Contact section */
+  body.dark-mode .contact-val,
+  body.dark-mode .contact-val a { color: #f0f0f0 !important; }
+  body.dark-mode .contact-label { color: #888 !important; }
+  body.dark-mode .contact-grid > div > div { background: #1a1d27 !important; border-color: rgba(255,255,255,0.08) !important; }
+
+  /* Form */
+  body.dark-mode .form-input,
+  body.dark-mode .form-textarea { background: #0f1117 !important; border-color: rgba(255,255,255,0.15) !important; color: #f0f0f0 !important; }
+  body.dark-mode .form-input::placeholder,
+  body.dark-mode .form-textarea::placeholder { color: #666 !important; }
+  body.dark-mode label,
+  body.dark-mode .form-label { color: #cccccc !important; }
+  body.dark-mode h3[style] { color: #f0f0f0 !important; }
+
+  /* Tech tags & filter buttons */
+  body.dark-mode .tech-tag { background: rgba(255,255,255,0.08) !important; color: #cccccc !important; }
+  body.dark-mode .filter-btn { background: #1a1d27 !important; color: #cccccc !important; border-color: rgba(255,255,255,0.1) !important; }
+  body.dark-mode .filter-btn.active { background: var(--gold) !important; color: #0f1117 !important; }
+
+  /* Proj link */
+  body.dark-mode .proj-link { background: #0f1117 !important; color: #cccccc !important; border-color: rgba(255,255,255,0.1) !important; }
+
+  /* About section text */
+  body.dark-mode .about-text p,
+  body.dark-mode .about-text { color: #cccccc !important; }
+
+  /* Experience company & badges */
+  body.dark-mode .exp-company { color: var(--gold-light) !important; }
+  body.dark-mode .exp-badge { background: rgba(201,168,76,0.15) !important; color: var(--gold-light) !important; }
+
+  /* Footer */
+  body.dark-mode footer { background: #080c14 !important; }
+
+  /* Cert notice */
+  body.dark-mode .cert-notice { background: #1a1d27; border-color: rgba(255,255,255,0.08); }
+
+  /* Stats */
+  body.dark-mode .stat-num { color: var(--gold-light) !important; }
+  body.dark-mode .stat-label { color: #aaaaaa !important; }
+
+  /* Dark mode toggle button */
+  #dark-toggle {
+    background: none; border: none; cursor: pointer;
+    color: rgba(255,255,255,0.8); font-size: 1.2rem;
+    padding: 4px 8px; border-radius: 6px;
+    transition: var(--transition);
+    display: flex; align-items: center; gap: 6px;
+  }
+  #dark-toggle:hover { color: var(--gold); }
+
+  /* Skill progress bars */
+  .skill-bar-wrap { margin-bottom: 1rem; }
+  .skill-bar-header { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: 500; color: var(--white); }
+  .skill-bar-bg { background: rgba(255,255,255,0.1); border-radius: 50px; height: 8px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; border-radius: 50px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); width: 0%; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+
+  /* Project card gradient previews */
+  .proj-preview {
+    height: 160px;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .proj-preview-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em; z-index: 1;
+  }
+
+  /* WhatsApp floating button */
+  #whatsapp-float {
+    position: fixed; bottom: 90px; right: 28px;
+    background: #25D366; color: white;
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 990; transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  #whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+
+  /* Cert cards */
+  .cert-card {
+    background: var(--white);
+    border: 1px solid rgba(10,22,40,0.07);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .cert-icon { font-size: 2rem; flex-shrink: 0; }
+  .cert-title { font-weight: 600; color: var(--text-dark); font-size: 0.95rem; margin-bottom: 4px; }
+  .cert-issuer { font-size: 0.8rem; color: var(--text-light); }
+  .cert-status { display: inline-block; margin-top: 8px; font-size: 0.72rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; letter-spacing: 0.04em; }
+  .cert-status.earned { background: rgba(107,143,113,0.15); color: var(--sage); }
+  .cert-status.inprogress { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.2rem; }
+
   /* ============================================
      RESET & BASE
   ============================================ */
@@ -908,6 +1061,7 @@
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
+  <button id="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
   <div class="hamburger" id="hamburger" role="button" aria-label="Open menu">
     <span></span><span></span><span></span>
   </div>
@@ -1181,9 +1335,9 @@
 
       <!-- Project 1 — Company Website -->
       <div class="project-card" data-category="company">
-        <div class="project-img">
-          <div class="project-img-label">ashokairon.com</div>
-          <span class="project-cat-badge">Company Website</span>
+        <div class="proj-preview" style="background:linear-gradient(135deg,#1E3A5F,#2A4A7A);">
+          <div class="proj-preview-label">ashokairon.com</div>
+          <span class="project-cat-badge" style="position:absolute;top:12px;right:12px;">Company Website</span>
         </div>
         <div class="project-body">
           <h3 class="project-title">Ashoka Iron &amp; Steel</h3>
@@ -1204,9 +1358,9 @@
 
       <!-- Project 2 — Personal Project -->
       <div class="project-card" data-category="personal">
-        <div class="project-img">
-          <div class="project-img-label">synetic-memories</div>
-          <span class="project-cat-badge">Personal Project</span>
+        <div class="proj-preview" style="background:linear-gradient(135deg,#3d1f6e,#6a3d9a);">
+          <div class="proj-preview-label">synetic-memories</div>
+          <span class="project-cat-badge" style="position:absolute;top:12px;right:12px;">Personal Project</span>
         </div>
         <div class="project-body">
           <h3 class="project-title">Synetic Memories</h3>
@@ -1228,9 +1382,9 @@
 
       <!-- Project 3 — Portfolio -->
       <div class="project-card" data-category="portfolio">
-        <div class="project-img">
-          <div class="project-img-label">my-portfolio</div>
-          <span class="project-cat-badge">Portfolio Website</span>
+        <div class="proj-preview" style="background:linear-gradient(135deg,#0A1628,#C9A84C);">
+          <div class="proj-preview-label">my-portfolio</div>
+          <span class="project-cat-badge" style="position:absolute;top:12px;right:12px;">Portfolio Website</span>
         </div>
         <div class="project-body">
           <h3 class="project-title">Personal Portfolio</h3>
@@ -1252,9 +1406,9 @@
 
       <!-- Project 4 — Snake Game -->
       <div class="project-card" data-category="practice">
-        <div class="project-img">
-          <div class="project-img-label">snak-game</div>
-          <span class="project-cat-badge">Practice Project</span>
+        <div class="proj-preview" style="background:linear-gradient(135deg,#0d2b0d,#1a5c1a);">
+          <div class="proj-preview-label">🐍 snak-game</div>
+          <span class="project-cat-badge" style="position:absolute;top:12px;right:12px;">Practice Project</span>
         </div>
         <div class="project-body">
           <h3 class="project-title">Snake Game</h3>
@@ -1298,45 +1452,31 @@
     </div>
     <div class="achievements-grid">
       <div class="achievement-card reveal">
-        <div class="ach-icon">🌐</div>
+        <div class="ach-icon">🏢</div>
         <div>
-          <div class="ach-title">Developed & Hosted a Business Website</div>
-          <div class="ach-desc">Successfully built and deployed a complete business website, taking it from concept to live production.</div>
+          <div class="ach-title">Live Business Website — Ashoka Iron & Steel</div>
+          <div class="ach-desc">Designed and deployed a complete professional website for a real steel manufacturing business. Live at ashokairon.com.</div>
         </div>
       </div>
       <div class="achievement-card reveal" style="transition-delay:0.1s">
-        <div class="ach-icon">💻</div>
+        <div class="ach-icon">🗂️</div>
         <div>
-          <div class="ach-title">Built Multiple Website Projects</div>
-          <div class="ach-desc">Delivered a portfolio of websites spanning business, portfolio, and company categories with consistent quality.</div>
+          <div class="ach-title">Personal Portfolio Website</div>
+          <div class="ach-desc">Built this portfolio from scratch — clean design, smooth animations, and fully responsive. Hosted live on GitHub Pages.</div>
         </div>
       </div>
       <div class="achievement-card reveal" style="transition-delay:0.15s">
-        <div class="ach-icon">🏭</div>
+        <div class="ach-icon">🤖</div>
         <div>
-          <div class="ach-title">Multi-Industry Professional Experience</div>
-          <div class="ach-desc">Gained hands-on experience across manufacturing (Vardhman Textiles), retail (Reliance), and industrial operations.</div>
+          <div class="ach-title">AI-Driven Problem Solving</div>
+          <div class="ach-desc">Regularly use AI tools to solve real-world tasks — Excel formulas, Google Sheets automation, content writing, and day-to-day digital problems.</div>
         </div>
       </div>
       <div class="achievement-card reveal" style="transition-delay:0.2s">
-        <div class="ach-icon">🤖</div>
+        <div class="ach-icon">📜</div>
         <div>
-          <div class="ach-title">AI-Powered Workflow Implementation</div>
-          <div class="ach-desc">Hands-on experience applying AI tools to real workplace tasks, improving efficiency and output quality.</div>
-        </div>
-      </div>
-      <div class="achievement-card ach-future reveal" style="transition-delay:0.25s">
-        <div class="ach-icon" style="background:rgba(10,22,40,0.04);">⭐</div>
-        <div>
-          <div class="ach-title" style="color:var(--text-light);">Achievement Placeholder</div>
-          <div class="ach-desc">This space is reserved for future achievements and milestones. Will be updated as your journey progresses.</div>
-        </div>
-      </div>
-      <div class="achievement-card ach-future reveal" style="transition-delay:0.3s">
-        <div class="ach-icon" style="background:rgba(10,22,40,0.04);">🎯</div>
-        <div>
-          <div class="ach-title" style="color:var(--text-light);">Achievement Placeholder</div>
-          <div class="ach-desc">Add your next milestone here — certifications, client wins, launches, recognitions, or anything worth celebrating.</div>
+          <div class="ach-title">Multiple Workshop Certifications</div>
+          <div class="ach-desc">Completed workshops in Java, Networking, Advance Excel, Web Design, and Canva with AI — continuously investing in new skills.</div>
         </div>
       </div>
     </div>
@@ -1352,11 +1492,47 @@
       <div class="section-label">Credentials</div>
       <h2 class="section-title">Certifications</h2>
     </div>
-    <div class="cert-notice reveal">
-      <div class="cert-notice-icon">📜</div>
-      <div class="cert-notice-title">Certifications Coming Soon</div>
-      <div class="cert-notice-text">This section will be updated with professional certifications and credentials as they are earned.<br>Each certificate will include the issuing body, date, and credential ID.</div>
-      <span class="cert-placeholder-tag">// certifications will be added here</span>
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon">☕</div>
+        <div>
+          <div class="cert-title">Java Workshop</div>
+          <div class="cert-issuer">Q Spiders</div>
+          <span class="cert-status earned">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:0.1s">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <div class="cert-title">Networking</div>
+          <div class="cert-issuer">College Workshop</div>
+          <span class="cert-status earned">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:0.15s">
+        <div class="cert-icon">📊</div>
+        <div>
+          <div class="cert-title">Advance Excel</div>
+          <div class="cert-issuer">College Workshop</div>
+          <span class="cert-status earned">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:0.2s">
+        <div class="cert-icon">🎨</div>
+        <div>
+          <div class="cert-title">Web Design</div>
+          <div class="cert-issuer">College Workshop</div>
+          <span class="cert-status earned">✓ Completed</span>
+        </div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:0.25s">
+        <div class="cert-icon">✏️</div>
+        <div>
+          <div class="cert-title">Canva with AI</div>
+          <div class="cert-issuer">Aadvi Business Structures LLP</div>
+          <span class="cert-status earned">✓ Completed</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1501,6 +1677,11 @@
   </div>
 </footer>
 
+<!-- WHATSAPP FLOAT -->
+<a id="whatsapp-float" href="https://wa.me/917087849894" target="_blank" title="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.03 18.75a7.48 7.48 0 0 1-3.576-.908L4.5 19.5l1.687-3.873A7.5 7.5 0 1 1 12.03 18.75z"/></svg>
+</a>
+
 <!-- BACK TO TOP -->
 <button id="back-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 15l-6-6-6 6"/></svg>
@@ -1510,6 +1691,33 @@
 <!-- JAVASCRIPT -->
 <!-- ============================================================ -->
 <script>
+  // DARK MODE
+  function toggleDark() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.getElementById('dark-toggle');
+    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  }
+  // Restore dark mode preference
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('dark-toggle').textContent = '☀️';
+  }
+
+  // SKILL BAR ANIMATION
+  function animateSkillBars() {
+    document.querySelectorAll('.skill-bar-fill[data-width]').forEach(bar => {
+      bar.style.width = bar.getAttribute('data-width') + '%';
+    });
+  }
+  const skillSection = document.getElementById('skills');
+  if (skillSection) {
+    const skillIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { animateSkillBars(); skillIO.disconnect(); } });
+    }, { threshold: 0.3 });
+    skillIO.observe(skillSection);
+  }
+
   // LOADER
   window.addEventListener('load', () => {
     setTimeout(() => {
@@ -1585,12 +1793,64 @@
     });
   });
 
-  // CONTACT FORM (basic)
-  document.querySelector('.form-submit').addEventListener('click', () => {
-    const name = document.querySelector('.form-input').value.trim();
-    if (!name) { alert('Please fill in your name.'); return; }
-    alert('Thank you for your message! This form needs a backend to send messages. Connect it to EmailJS, Formspree, or your own server.');
+  // CONTACT FORM — Formspree se connected
+  document.querySelector('.form-submit').addEventListener('click', async () => {
+    const inputs = document.querySelectorAll('.form-input');
+    const name = inputs[0].value.trim();
+    const email = inputs[1].value.trim();
+    const subject = inputs[2].value.trim();
+    const message = document.querySelector('.form-textarea').value.trim();
+
+    if (!name || !email || !message) {
+      showToast('⚠️ Please fill in all required fields.', 'warn');
+      return;
+    }
+    if (!email.includes('@')) {
+      showToast('⚠️ Please enter a valid email address.', 'warn');
+      return;
+    }
+
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+      if (res.ok) {
+        showToast('✅ Message sent! I will get back to you soon.', 'success');
+        inputs.forEach(i => i.value = '');
+        document.querySelector('.form-textarea').value = '';
+      } else {
+        showToast('❌ Something went wrong. Please email me directly.', 'error');
+      }
+    } catch {
+      showToast('❌ Network error. Please try again or email directly.', 'error');
+    }
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+    btn.disabled = false;
   });
+
+  // TOAST NOTIFICATION
+  function showToast(msg, type) {
+    let t = document.getElementById('toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'toast';
+      t.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);padding:14px 24px;border-radius:12px;font-size:0.9rem;font-weight:500;z-index:9999;opacity:0;transition:all 0.4s ease;pointer-events:none;box-shadow:0 8px 32px rgba(0,0,0,0.2);';
+      document.body.appendChild(t);
+    }
+    const colors = { success: '#22c55e', warn: '#f59e0b', error: '#ef4444' };
+    t.style.background = colors[type] || '#333';
+    t.style.color = '#fff';
+    t.textContent = msg;
+    t.style.opacity = '1';
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(20px)'; }, 4000);
+  }
 </script>
 </body>
 </html>
