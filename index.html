@@ -567,7 +567,6 @@
     font-size: 1.6rem; font-weight: 800; color: var(--navy); line-height: 1;
   }
   .badge-txt { font-size: 0.6rem; font-weight: 600; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.2; }
-  .about-content {}
   .about-intro {
     background: linear-gradient(135deg, rgba(10,22,40,0.04), rgba(30,58,95,0.06));
     border-left: 3px solid var(--gold);
@@ -1331,6 +1330,7 @@
       <button class="filter-btn" data-filter="portfolio">Portfolio</button>
       <button class="filter-btn" data-filter="practice">Practice Projects</button>
       <button class="filter-btn" data-filter="restaurant">Restaurant Website</button>
+      <button class="filter-btn" data-filter="business">Business Website</button>
     </div>
     <div class="projects-grid reveal" style="transition-delay:0.1s">
 
@@ -1477,6 +1477,31 @@
               Live Site
             </a>
             <a href="https://github.com/Tinku1322hi/yummy-yummy" target="_blank" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 — Indore Banana Wafers & Namkeen -->
+      <div class="project-card" data-category="business">
+        <div class="proj-preview" style="background:linear-gradient(135deg,#8B5000,#F5A623);">
+          <div class="proj-preview-label">🍌 indorebananawafers</div>
+          <span class="project-cat-badge" style="position:absolute;top:12px;right:12px;">Business Website</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Indore Banana Wafers &amp; Namkeen</h3>
+          <p class="project-desc">A full business website for an authentic Indore-style banana chips and namkeen brand, established 2003. Features a dynamic filterable product catalogue, pricing, order enquiry form with WhatsApp and email integration, and a clean brand story section.</p>
+          <div class="project-techs">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <div class="project-links">
+            <a href="https://indorebananawafers.vercel.app/" target="_blank" class="proj-link">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Live Site
+            </a>
           </div>
         </div>
       </div>
@@ -1920,6 +1945,41 @@
     t.style.transform = 'translateX(-50%) translateY(0)';
     setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(20px)'; }, 4000);
   }
+  // Mobile Menu Toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // Dark Mode Toggle
+  function toggleDark() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.getElementById('dark-toggle');
+    if (document.body.classList.contains('dark-mode')) {
+      btn.innerText = '☀️';
+    } else {
+      btn.innerText = '🌙';
+    }
+  }
+
+  // Scroll Progress Bar
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('scroll-progress').style.width = scrolled + '%';
+  });
+
+  // Loader hiding
+  window.addEventListener('load', () => {
+    document.getElementById('loader').classList.add('hidden');
+  });
 </script>
 </body>
 </html>
